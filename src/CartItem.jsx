@@ -9,16 +9,18 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total amount for all products in the cart
   const calculateTotalAmount = () => {
-};
+        return cart.reduce((total, item) => {
+            console.log(item.cost)
+            const price = typeof item.cost === "string" ? parseFloat(item.cost.replace("$", "")) : item.cost;
+            console.log(price)
+            return total + price * item.quantity;
+        }, 0);
+  };
 
   const handleContinueShopping = (e) => {
         if (onContinueShopping) {
             onContinueShopping(e);
         }
-  };
-
-  const handleCheckoutShopping = (e) => {
-        alert('Functionality to be added for future reference');
   };
 
   const handleIncrement = (item) => {
@@ -71,7 +73,7 @@ const CartItem = ({ onContinueShopping }) => {
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick= {(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1" onclick= {(e) => handleCheckoutShopping(e)}>Checkout</button>
+        <button className="get-started-button1" onClick={() => alert('Apologies, the checkout funcionality has not been implemented as of yet')}>Checkout</button>
       </div>
     </div>
   );
