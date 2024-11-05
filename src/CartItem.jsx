@@ -18,9 +18,7 @@ const CartItem = ({ onContinueShopping }) => {
   };
 
   const handleCheckoutShopping = (e) => {
-        if (onHandleCheckoutShopping) {
-            alert('Functionality to be added for future reference');
-        }
+        alert('Functionality to be added for future reference');
   };
 
   const handleIncrement = (item) => {
@@ -80,5 +78,3 @@ const CartItem = ({ onContinueShopping }) => {
 };
 
 export default CartItem;
-
-
