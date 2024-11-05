@@ -235,6 +235,7 @@ function ProductList() {
     color: 'white',
     fontSize: '30px',
     textDecoration: 'none',
+    alignItems: 'center',
    }
    const handleCartClick = (e) => {
     e.preventDefault();
@@ -250,8 +251,8 @@ const handlePlantsClick = (e) => {
     setShowCart(false);
   };
   const handleAddToCart = (plant) => {
-    dispatch(addItem(plant)); // Dispatch plant details to CartSlice
-    setAddedToCart(prevState => ({ ...prevState, [plant.name]: true })); // Mark plant as added
+    dispatch(addItem(plant));
+    setAddedToCart(prevState => ({ ...prevState, [plant.name]: true }));
 };
     return (
         <div>
@@ -261,8 +262,8 @@ const handlePlantsClick = (e) => {
                <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                <a href="/" style={{textDecoration:'none'}}>
                         <div>
-                    <h3 style={{color:'white'}}>Paradise Nursery</h3>
-                    <i style={{color:'white'}}>Where Green Meets Serenity</i>
+                    <h3 style={{color:'white'}}>Bound2Earth</h3>
+                    <i style={{color:'white'}}>So you too can feel the heartbeat of the World</i>
                     </div>
                     </a>
                 </div>
